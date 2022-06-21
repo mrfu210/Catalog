@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Catalog.Repositories
 {
-    public class InMemItemsRepository
+    public class InMemItemsRepository : IItemsRepository
     {
         private readonly List<Item> items = new()
         {
@@ -16,13 +16,13 @@ namespace Catalog.Repositories
 
         public IEnumerable<Item> GetItems()
         {
-            return items;   
+            return items;
         }
 
         public Item GetItem(Guid id)
         {
             return items.Where(items => items.Id == id).SingleOrDefault();
         }
-        
+
     }
 }
