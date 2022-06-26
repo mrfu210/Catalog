@@ -60,7 +60,7 @@ namespace Catalog.Cotrollers
         }
 
         //PUT / items/{id}
-        [HttpPut]
+        [HttpPut("{id}")]
         public ActionResult UpdateItem(Guid id, UpdateItemDto itemDto)
         {
             var existingItem = repository.GetItem(id);
